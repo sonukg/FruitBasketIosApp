@@ -9,16 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            FavoriteView()
+                .tabItem {
+                    Label("Favorite", systemImage: "heart")
+                }
+            OrderView()
+                .tabItem {
+                    Label("Order", systemImage: "arrow.right.circle")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+            CartView()
+                .tabItem {
+                    Label("Cart", systemImage: "cart")
+                }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+
+
+
+
+
+
